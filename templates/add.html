@@ -1,0 +1,159 @@
+{% include "header.html" %}
+
+{% block title %}Add A New Cafe{% endblock %}
+{% block content %}
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="static/coffee2.jpg" alt="" width="72" height="72">
+      <h2>Add a new cafe</h2>
+      <p class="lead">Found a cool new cafe? Fill out the details below to add it to the list.</p>
+    </div>
+
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Details of Cafe</h4>
+        <form class="needs-validation" method="post" action="{{ url_for('add_cafe') }}">
+
+            <div class="row g-3">
+            <div class="col-12">
+              <label for="name" class="form-label">Cafe Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name of Cafe" value="" required="">
+              <div class="invalid-feedback">
+                  Enter name of the cafe.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="map_url" class="form-label">Maps Link</label>
+              <input type="url" class="form-control" id="map_url" name="map_url" placeholder="https://www.google.com/maps" required="">
+              <div class="invalid-feedback">
+                Enter the url of the location of the cafe.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="img_url" class="form-label">Image Link</label>
+              <input type="url" class="form-control" id="img_url" name="img_url" placeholder="https://images.google.co.uk" required="">
+              <div class="invalid-feedback">
+                Enter the url of an image of the cafe.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="location" class="form-label">Location</label>
+              <input type="text" class="form-control" id="location" name="location" placeholder="South Kensington" required="">
+              <div class="invalid-feedback">
+                Enter the location of the cafe.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="seats" class="form-label">Number of Seats</label>
+              <input type="number" class="form-control" id="seats" name="seats" placeholder="0" min="0" required="">
+              <div class="invalid-feedback">
+                Enter the number of seats available.
+              </div>
+            </div>
+
+            <div class="row gy-3">
+                <div class ="col-5">
+                    <label class="form-label">Toilets</label>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                      <input id="toilet_yes" name="has_toilet" type="radio" class="form-check-input" checked="" required="">
+                      <label class="form-check-label" for="toilet_yes">✓</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                      <input id="toilet_no" name="has_toilet" type="radio" class="form-check-input" required="">
+                      <label class="form-check-label" for="toilet_no">✘</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row gy-3">
+                <div class ="col-5">
+                    <label class="form-label">Wifi</label>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                      <input id="wifi_yes" name="has_wifi" type="radio" class="form-check-input" checked="" required="">
+                      <label class="form-check-label" for="wifi_yes">✓</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                <div class="form-check">
+                  <input id="wifi_no" name="has_wifi" type="radio" class="form-check-input" required="">
+                  <label class="form-check-label" for="wifi_no">✘</label>
+                </div>
+                </div>
+            </div>
+
+            <div class="row gy-3">
+                <div class="col-md-5">
+                  <label for="power" class="form-label">Power</label>
+                </div>
+                <div class="col-md-5">
+                  <select class="form-select" id="power" name="has_sockets" required="">
+                    <option value="">Choose Power Level.</option>
+                    <option>✘</option>
+                    <option>🔌</option>
+                    <option>🔌🔌</option>
+                    <option>🔌🔌🔌</option>
+                    <option>🔌🔌🔌🔌</option>
+                    <option>🔌🔌🔌🔌🔌</option>
+                  </select>
+                </div>
+            </div>
+
+
+            <div class="row gy-3">
+                <div class ="col-5">
+                    <label class="form-label">Take Calls?</label>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                      <input id="can_take_calls_yes" name="can_take_calls" type="radio" class="form-check-input" checked="" required="">
+                      <label class="form-check-label" for="can_take_calls_yes">✓</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                      <input id="can_take_calls_no" name="can_take_calls" type="radio" class="form-check-input" required="">
+                      <label class="form-check-label" for="can_take_calls_no">✘</label>
+                    </div>
+                </div>
+            </div>
+
+
+             <div class="col-12">
+              <label for="coffee_price" class="form-label">Coffee Price (£)</label>
+              <input type="number" class="form-control" id="coffee_price" name="coffee_price" placeholder="0.00" value="" min="0" step="0.01" required>
+              <div class="invalid-feedback">
+                  Enter price of a coffee in dollars.
+              </div>
+            </div>
+
+
+        </div>
+            <hr class="my-4">
+
+            <div class="row gy-3">
+                <div class="col-md-6">
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">Add Cafe</button>
+                </div>
+                <div class="col-md-6">
+                  <button class="w-100 btn btn-primary btn-lg" type="reset">Reset</button>
+                </div>
+          </div>
+        </form>
+      </div>
+
+  </main>
+
+</div>
+{% endblock %}
+
+{% include "footer.html" %}

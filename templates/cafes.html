@@ -1,0 +1,54 @@
+{% include "header.html" %}
+
+{% block title %}All Cafes{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>All Cafes</h1>
+
+      <table class="table" style="color: white">
+         <thead>
+            <tr>
+                <th scope="col">Cafe Name</th>
+                <th scope="col">Maps Link</th>
+                <th scope="col">Image</th>
+                <th scope="col">Location</th>
+                <th scope="col">Seats</th>
+                <th scope="col">Toilets</th>
+                <th scope="col">Wifi</th>
+                <th scope="col">Power</th>
+                <th scope="col">Take Calls?</th>
+                <th scope="col">Coffee Price</th>
+            </tr>
+        </thead>
+
+        <tbody class="table-group-divider">
+          {% for row in cafes %}
+          <tr>
+            {% for item in row %}
+                {% if item=="map_url" %}
+                    <td><a href="{{ row[item] }}" target="_blank">Maps Link</a></td>
+                {% elif item=="img_url" %}
+                    <td><a href="{{ row[item] }}" target="_blank">Image Link</a></td>
+                {% elif item in ["has_toilet", "has_wifi", "can_take_calls"] %}
+                    {% if row[item] %}
+                      <td>✓</td>
+                    {% else %}
+                      <td>✘</td>
+                    {% endif %}
+                {% elif item!="id" %}
+                    <td>{{ row[item] }}</td>
+                {% endif %} {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% include "footer.html" %}

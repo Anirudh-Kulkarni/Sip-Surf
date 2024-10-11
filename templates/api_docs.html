@@ -1,0 +1,64 @@
+{% include "header.html" %}
+
+
+{% block title %}API Documentation{% endblock %}
+{% block content %}
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="static/coffee2.jpg" alt="" width="72" height="72">
+      <h2>API Documentation</h2>
+      <p class="lead">These are the list of APIs you can use to access, add, update, and delete from the database. See <a href = "https://documenter.getpostman.com/view/38746038/2sAXxS7AvK">this page</a> on Postman for the detailed documentation. </p>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>All Cafes</h1>
+
+      <table class="table" style="color: white">
+         <thead>
+            <tr>
+                <th scope="col">Method</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+
+        <tbody class="table-group-divider">
+
+          <tr>
+              <td>GET</td>
+              <td>Search cafes by location. The <mark>/api/search</mark> route will search the cafe database for a cafe that matches the location. Use the location parameter to pass a location name.</td>
+          </tr>
+
+          <tr>
+              <td>GET</td>
+              <td>Get all cafes. The <mark>/api/all</mark> route returns a JSON with the data from all cafes in the database.</td>
+          </tr>
+
+
+           <tr>
+              <td>POST</td>
+              <td>Add a new cafe. The <mark>/api/add</mark> route lets you add a new cafe into the database. Enter all the required parameters in the body field.</td>
+          </tr>
+
+          <tr>
+              <td>PATCH</td>
+              <td>Update the price of a black coffee at a particular cafe using the <mark>/api/update_price/</mark> route. You need to use the <mark>id</mark> and new_price parameters.</td>
+          </tr>
+
+
+          <tr>
+              <td>DELETE</td>
+              <td>Delete a cafe by <mark>Id</mark>. Deletes a cafe from the database using the <mark>api/report-closed</mark> route. You will need to provide the <mark>Id</mark> of the cafe to delete as a route. You will also need to provide a valid API key for this operation to be allowed.</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% include "footer.html" %}
