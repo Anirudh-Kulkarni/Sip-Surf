@@ -84,7 +84,7 @@ The API allows you to interact with the cafe data programmatically. Here are the
 | DELETE | `/api/report-closed`         | Delete a cafe by ID. Provide the cafe ID in the route and a valid API key for this operation.     |
 
 
-For more detailed API documentation, refer to [Postman Documentation](link_to_postman).
+For more detailed API documentation, refer to [Postman Documentation](https://documenter.getpostman.com/view/38746038/2sAXxS7AvK).
 
 ## Contributing
 
