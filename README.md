@@ -1,6 +1,6 @@
 # Sip & Surf
 
-Sip & Surf is a Flask application that helps you discover and explore cafes. With a user-friendly interface, you can search for cafes by location, add new cafes, and view detailed information about each cafe. 
+Sip & Surf is a Flask application built with Python that helps you discover and explore cafes. Utilizing Jinja for templating and SQLAlchemy for database interactions, it features a user-friendly interface where you can search for cafes by location, add new cafes, and view detailed information about each cafe. Additionally, the application provides API endpoints for further integration, and you can modify database entries directly through the website.
 
 I developed this application as a part of the Udemy course [100 Days of Code: The Complete Python Pro Bootcamp](http://www.udemy.com/course/100-days-of-code/). I thank Angela Yu and her team for this excellent course and I would highly recommend it to anyone interested in learning and enhancing their coding skills in Python. Photos are taken from the [Unsplash website](https://unsplash.com).
 
